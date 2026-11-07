@@ -173,9 +173,37 @@ Our 30-day trajectory run tracked every pass made by these observation platforms
 ]
 
 #align(center)[
-  #image("../output/figures/global_satellite_density_map.png", width: 90%)
-  #text(size: 8.5pt, fill: rgb("#64748b"))[*Global Pass Density Heatmap*: Satellite ground-tracks over 30 days, revealing the heavy bands crisscrossing the northern hemisphere.]
+  #image("../output/figures/world_satellite_activity_heatmap.png", width: 95%)
+  #text(size: 8.5pt, fill: rgb("#64748b"))[*The Global Panopticon*: Full-world heatmap of satellite activity over 30 days. The green dashed lines mark the +53° and -53° Starlink turning latitudes, concentrating activity across the northern hemisphere.]
 ]
+
+== The 550-Kilometer Wall
+
+It gets more specific. Satellites in Low Earth Orbit do not distribute themselves evenly across space. They are packed into razor-thin vertical shells. 
+
+When we calculated the actual volumetric spatial density—dividing the number of satellites by the physical cubic kilometers of each orbital shell—we uncovered what can only be described as the *550-kilometer Wall*.
+
+#align(center)[
+  #image("../output/figures/volumetric_orbital_density.png", width: 80%)
+  #text(size: 8.5pt, fill: rgb("#64748b"))[*The 550 km Wall*: Volumetric spatial density in LEO spikes dramatically in the Starlink shell, reaching over an order of magnitude higher than any other altitude regime.]
+]
+
+While the average spatial density across Low Earth Orbit hovers below 0.05 satellites per million cubic kilometers, the shell between 540 and 560 kilometers spikes to *0.42 satellites per million cubic kilometers*. Over 92% of the objects in that shell belong to SpaceX. 
+
+This creates a physical toll gate: any developing nation launching a satellite through this shell must conduct continuous collision-avoidance maneuvers, escalating the cost of entry for anyone who wasn't first in line.
+
+== What Goes Up Must Burn Down: The Atmospheric Toll
+
+There is another unpriced cost of this orbital land grab that rarely makes the headlines: what happens when these satellites die?
+
+Modern mega-constellations are built around a planned obsolescence model. Every five years, the entire fleet must be deorbited and replaced. For an 11,000-satellite constellation, that means roughly *2,200 satellites are commanded to plunge into the atmosphere every single year*.
+
+#align(center)[
+  #image("../output/figures/atmospheric_deorbit_mass.png", width: 80%)
+  #text(size: 8.5pt, fill: rgb("#64748b"))[*Aerosolized Metal in the Sky*: Estimated metric tons of satellite dry mass and aluminum oxide (alumina) vaporized annually in the mesosphere by constellation operators.]
+]
+
+When a half-ton satellite hits the mesosphere at 17,500 miles per hour, it doesn't vanish. It vaporizes into microscopic particles of aluminum oxide (alumina). Our model calculates that commercial constellation replenishment is injecting *over 1,000 metric tons of vaporized metal* into the upper atmosphere every year. Atmospheric scientists warn that these nanoparticles can catalyze ozone destruction and alter stratospheric radiative balance. The commercial profits are captured in Silicon Valley; the chemical externalities are dumped into the global atmosphere.
 
 The result is what political scientists call *asymmetric transparency*. Great powers and Western commercial intelligence firms (Planet Labs, Maxar, BlackSky) can watch the Global South in near-real-time. They can monitor troop movements in the Sahel, count shipping containers in Latin American ports, and assess agricultural yields across South Asia before local governments even know the data exists.
 

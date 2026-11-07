@@ -17,6 +17,14 @@ from src.analysis.metrics import (
     compute_earth_observation_revisit_disparity,
     compute_debris_liability_index,
 )
+from src.analysis.advanced_metrics import (
+    compute_temporal_enclosure,
+    compute_volumetric_density,
+    compute_geo_longitudinal_sovereignty,
+    compute_climate_vulnerability_gap,
+    compute_atmospheric_deorbit_deposition,
+    compute_global_activity_grid,
+)
 from src.visualization.static_plots import (
     plot_global_satellite_density,
     plot_regional_coverage_comparison,
@@ -28,6 +36,15 @@ from src.visualization.interactive_plots import (
     create_interactive_orbital_scatter,
     create_interactive_trajectory_map,
     create_interactive_regional_revisit_dashboard,
+)
+from src.visualization.advanced_plots import (
+    plot_temporal_enclosure_velocity,
+    plot_volumetric_orbital_density,
+    plot_geo_longitudinal_sovereignty,
+    plot_climate_vulnerability_paradox,
+    plot_atmospheric_deorbit_mass,
+    plot_enhanced_world_satellite_activity_heatmap,
+    create_interactive_world_activity_heatmap_html,
 )
 
 
@@ -66,11 +83,7 @@ def run_astropolitics_pipeline():
     print("\n[Step 3] Initializing SGP4 vectorized trajectory engine (30 days)...")
     propagator = OrbitPropagator()
     
-    # Propagate active satellites (sample of ~2,500 representative active operational payloads across all blocs)
-    # Ensuring all non-Starlink payloads and representative Starlink shell satellites are included
     active_sats = df_master[df_master["OBJECT_TYPE"] != "DEB"].copy()
-    
-    # Stratified sample: all non-Starlink + 1,500 Starlink to represent the full constellation accurately
     non_starlink = active_sats[~active_sats["OBJECT_NAME"].str.contains("STARLINK", na=False)]
     starlink_sample = active_sats[active_sats["OBJECT_NAME"].str.contains("STARLINK", na=False)].sample(1500, random_state=42)
     selected_sats = pd.concat([non_starlink, starlink_sample])
@@ -96,7 +109,6 @@ def run_astropolitics_pipeline():
     )
     df_regional = pd.DataFrame(regional_stats).T
     df_regional.to_csv("data/processed/regional_dwell_statistics.csv")
-    print(df_regional[["category", "area_mkm2", "dwell_hours", "dwell_density_hours_per_mkm2"]])
     
     # 5. Latitudinal Dwell Skew
     print("\n[Step 5] Computing latitudinal dwell profile...")
@@ -111,7 +123,6 @@ def run_astropolitics_pipeline():
     if len(eo_lats) > 0:
         df_revisit = compute_earth_observation_revisit_disparity(eo_lats, eo_lons, step_hours=1.0)
         df_revisit.to_csv("data/processed/earth_observation_revisit.csv", index=False)
-        print(df_revisit)
     else:
         df_revisit = pd.DataFrame()
         
@@ -119,27 +130,68 @@ def run_astropolitics_pipeline():
     print("\n[Step 7] Computing debris liability index by sovereign nation...")
     df_liability = compute_debris_liability_index(df_master)
     df_liability.to_csv("data/processed/debris_liability_index.csv", index=False)
-    print(df_liability.head(10))
     
-    # 8. Visualizations (Static & Interactive)
-    print("\n[Step 8] Generating static publication-grade figures...")
+    # 8. Advanced Novel Metrics
+    print("\n[Step 8] Computing advanced novel metrics...")
+    
+    # 8a. Temporal Enclosure Velocity (1957-2026)
+    cum_temporal_df = compute_temporal_enclosure(df_master)
+    cum_temporal_df.to_csv("data/processed/temporal_enclosure_cumulative.csv")
+    print(f"  Calculated temporal enclosure over {len(cum_temporal_df)} years.")
+    
+    # 8b. Volumetric Density Profile (The 550 km Wall)
+    density_df = compute_volumetric_density(df_master)
+    density_df.to_csv("data/processed/volumetric_density_profile.csv", index=False)
+    peak_density = density_df["Density_Total_per_Mkm3"].max()
+    print(f"  Peak physical volumetric density in LEO: {peak_density:.2f} satellites / M km³")
+    
+    # 8c. Empirical Bogotá Test (GEO Longitudinal Sovereignty)
+    geo_sectors_df = compute_geo_longitudinal_sovereignty(df_master)
+    geo_sectors_df.to_csv("data/processed/geo_sovereignty_sectors.csv")
+    print("  Calculated GEO longitudinal sovereignty sectors.")
+    
+    # 8d. Climate-Surveillance Paradox
+    climate_gap_df = compute_climate_vulnerability_gap(df_regional, df_revisit)
+    climate_gap_df.to_csv("data/processed/climate_vulnerability_gap.csv", index=False)
+    print("  Calculated Climate Vulnerability vs. Sovereign Observation gap.")
+    
+    # 8e. Atmospheric Deorbit Deposition
+    deorbit_df = compute_atmospheric_deorbit_deposition(df_master)
+    deorbit_df.to_csv("data/processed/atmospheric_deorbit_deposition.csv", index=False)
+    total_alumina = deorbit_df["Annual Alumina Injection (Tons)"].sum()
+    print(f"  Total annual satellite alumina deposition in upper atmosphere: {total_alumina:.1f} metric tons/yr")
+    
+    # 8f. Enhanced World Activity Grid
+    lat_edges, lon_edges, counts_2d = compute_global_activity_grid(traj_res.latitudes, traj_res.longitudes, res_deg=1.0)
+    
+    # 9. Visualizations (Static & Interactive)
+    print("\n[Step 9] Generating primary static figures...")
     plot_global_satellite_density(traj_res.latitudes, traj_res.longitudes)
     plot_regional_coverage_comparison(regional_stats)
     plot_latitudinal_dwell_profile(bin_centers, dwell_density)
     plot_orbital_inequality_lorenz(concentration_stats["leo_bloc_shares"], concentration_stats["leo_shell_gini"])
     plot_mission_cohort_comparison(df_master)
     
-    print("\n[Step 9] Generating interactive Plotly widgets...")
+    print("\n[Step 10] Generating advanced novel static figures...")
+    plot_temporal_enclosure_velocity(cum_temporal_df)
+    plot_volumetric_orbital_density(density_df)
+    plot_geo_longitudinal_sovereignty(geo_sectors_df)
+    plot_climate_vulnerability_paradox(climate_gap_df)
+    plot_atmospheric_deorbit_mass(deorbit_df)
+    plot_enhanced_world_satellite_activity_heatmap(lat_edges, lon_edges, counts_2d)
+    
+    print("\n[Step 11] Generating interactive Plotly widgets...")
     create_interactive_orbital_scatter(df_master)
     sample_df = traj_res.to_dataframe_sample(max_points=10000)
     create_interactive_trajectory_map(sample_df)
     if not df_revisit.empty:
         create_interactive_regional_revisit_dashboard(df_revisit)
+    create_interactive_world_activity_heatmap_html(lat_edges, lon_edges, counts_2d)
         
     print("\n" + "=" * 70)
-    print("PIPELINE COMPLETED SUCCESSFULLY!")
+    print("ADVANCED ASTROPOLITICS PIPELINE COMPLETED SUCCESSFULLY!")
     print("=" * 70)
-    return traj_res, regional_stats, concentration_stats, df_revisit, df_liability
+    return 0
 
 
 if __name__ == "__main__":

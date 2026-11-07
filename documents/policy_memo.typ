@@ -119,7 +119,9 @@ While Article II of the 1967 Outer Space Treaty forbids national appropriation b
   ),
   [LEO Asset Share (SpaceX)], [88.1%], [\< 25% (Competitive)], [Extreme Monopoly],
   [LEO Ownership HHI], [7,789.3], [> 2,500 (Concentrated)], [Critical Monopolization],
-  [Altitude Shell Gini], [0.930], [0.0 (Equal Access)], [Severe Enclosure],
+  [550 km Shell Density], [0.42 / M km³], [\< 0.05 / M km³], [Severe Congestion Wall],
+  [Post-2019 Launches], [85.4%], [Even Historical Pace], [Abrupt Enclosure],
+  [Annual Metal Burn-up], [1,022.9 tons], [Negligible (Historical)], [Mesospheric Threat],
   [Global South LEO Share], [\< 0.2%], [Equitable Distribution], [Total Marginalization],
 )
 ]
@@ -198,6 +200,23 @@ We urge delegations to UN COPUOS, the ITU Radio Regulations Board, and regional 
   #text(size: 9pt)[
     - *Strict Deorbit Timelines*: Formally lower the international post-mission disposal guideline from 25 years to a mandatory maximum of *5 years* (and 1 year for mega-constellations).
     - *Decommissioning Bonds*: Require commercial operators to deposit an escrow decommissioning bond (\$250,000 per satellite) with their national licensing authority prior to launch, forfeited if deorbit operations fail.
+  ]
+]
+
+#v(0.2cm)
+
+#rect(
+  width: 100%,
+  fill: rgb("#f8fafc"),
+  stroke: 1pt + rgb("#cbd5e1"),
+  radius: 4pt,
+  inset: 10pt
+)[
+  #text(weight: "bold", size: 10pt, fill: rgb("#1e293b"))[Action 5: Adopt Montreal Protocol Amendments for Atmospheric Deorbit Aerosols] \
+  #v(2pt)
+  #text(size: 9pt)[
+    - *Regulate Alumina Injection*: Recognize the 1,000+ metric tons of vaporized aerospace aluminum injected into the mesosphere annually as an atmospheric pollutant under international ozone protection frameworks.
+    - *Material Standards*: Mandate non-catalytic, demisable composite materials in mega-constellation manufacturing to eliminate halogen-activating alumina aerosols.
   ]
 ]
 

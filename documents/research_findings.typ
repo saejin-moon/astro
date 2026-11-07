@@ -1,6 +1,6 @@
 #set page(
   paper: "a4",
-  margin: (top: 2.5cm, bottom: 2.5cm, left: 2.5cm, right: 2.5cm),
+  margin: (top: 2.2cm, bottom: 2.2cm, left: 2.3cm, right: 2.3cm),
   header: context {
     if here().page() > 1 [
       #text(size: 8.5pt, fill: rgb("#555555"))[
@@ -12,38 +12,38 @@
   },
   footer: context [
     #text(size: 8.5pt, fill: rgb("#777777"))[
-      Page #here().page() #h(1fr) astro-astropolitics-v1.0
+      Page #here().page() #h(1fr) astro-astropolitics-v2.0
     ]
   ]
 )
 
 #set text(
   font: "DejaVu Serif",
-  size: 10.5pt,
+  size: 10pt,
   lang: "en"
 )
 
 #set par(
   justify: true,
-  leading: 0.75em,
+  leading: 0.72em,
   first-line-indent: 1.5em
 )
 
 // Document Title Block
 #align(center)[
-  #v(0.5cm)
-  #text(size: 19pt, weight: "bold", fill: rgb("#111827"))[
+  #v(0.3cm)
+  #text(size: 18pt, weight: "bold", fill: rgb("#111827"))[
     Quantitative Astropolitics: Empirical Evidence of Orbital Enclosure and Hegemony from 30-Day Satellite Trajectories
   ]
-  #v(0.4cm)
-  #text(size: 11pt, weight: "medium", fill: rgb("#374151"))[
+  #v(0.3cm)
+  #text(size: 10.5pt, weight: "medium", fill: rgb("#374151"))[
     Moose $space diamond space$ Antigravity Autonomous Research Lab
   ]
   #v(0.1cm)
-  #text(size: 9.5pt, fill: rgb("#6b7280"))[
+  #text(size: 9pt, fill: rgb("#6b7280"))[
     Working Paper Series in Space Security and International Political Economy $space | space$ November 2026
   ]
-  #v(0.6cm)
+  #v(0.4cm)
 ]
 
 #rect(
@@ -51,22 +51,18 @@
   fill: rgb("#f8fafc"),
   stroke: 1pt + rgb("#e2e8f0"),
   radius: 4pt,
-  inset: 14pt
+  inset: 12pt
 )[
-  #text(weight: "bold", size: 10pt, fill: rgb("#0f172a"))[Abstract] \
-  #v(0.2cm)
-  #text(size: 9.5pt, fill: rgb("#334155"))[
+  #text(weight: "bold", size: 9.5pt, fill: rgb("#0f172a"))[Abstract] \
+  #v(0.15cm)
+  #text(size: 9pt, fill: rgb("#334155"))[
     Article I of the 1967 Outer Space Treaty (OST) enshrines outer space as the "province of all mankind," while Article II explicitly forbids sovereign appropriation. Yet the contemporary physical deployment of satellite assets presents an acute structural contradiction. By integrating CelesTrak ephemeris data for 16,092 cataloged objects and propagating operational constellations over a 30-day epoch window using vectorized SGP4 astrodynamics (evaluating over 2.67 million spatial state vectors), this study quantifies the emerging political economy of near-Earth space. 
     
-    We demonstrate that: (1) Low Earth Orbit (LEO) has undergone extreme commercial monopolization, with a single US commercial actor (SpaceX/Starlink) operating 88.1% of active operational satellites, yielding an unprecedented Herfindahl-Hirschman Index (HHI) of 7,789.3; (2) prime altitude shells exhibit a Gini coefficient of 0.930, foreclosing entry to nascent space programs; (3) inclination physics ($(d t) / (d phi) prop 1 / sqrt(sin^2(i) - sin^2(phi))$) structurally biases ground-track dwell time toward mid-to-high northern latitudes (45°–53°N), optimizing bandwidth delivery for affluent Global North markets while treating equatorial nations as secondary corridors; and (4) Earth observation and reconnaissance capabilities remain deeply asymmetric, establishing a panopticon over the Global South without sovereign reciprocal oversight. We conclude by assessing policy pathways to revitalize commons governance, including ITU quota allocations and orbital carrying-capacity fees.
-  ]
-  #v(0.2cm)
-  #text(size: 9pt, style: "italic", fill: rgb("#64748b"))[
-    *Keywords*: Astropolitics, Orbital Commons, Outer Space Treaty, Low Earth Orbit (LEO), SGP4 Orbit Propagation, Starlink, Satellite Surveillance, Digital Sovereignty.
+    We demonstrate that: (1) Low Earth Orbit (LEO) has undergone extreme commercial monopolization, with a single US commercial actor (SpaceX/Starlink) operating 88.1% of active operational satellites, yielding an unprecedented Herfindahl-Hirschman Index (HHI) of 7,789.3; (2) prime altitude shells exhibit a Gini coefficient of 0.930, with physical volumetric density peaking in the 540–560 km shell ("The 550 km Wall"); (3) a post-2019 inflection point has concentrated over 85% of historical active satellite deployments into the past seven years; (4) inclination physics ($(d t) / (d phi) prop 1 / sqrt(sin^2(i) - sin^2(phi))$) structurally biases ground-track dwell time toward mid-to-high northern latitudes (45°–53°N), treating equatorial regions as secondary throughput corridors; (5) geostationary slot ownership confirms the 1976 Bogotá Declaration hypothesis, with slots over Africa and South America predominantly held by northern powers; (6) Earth observation capabilities exhibit an acute "climate-surveillance paradox", where the regions most vulnerable to climate disruption have the least sovereign monitoring; and (7) constellation replenishment injects over 1,000 metric tons of aerosolized metal annually into the upper atmosphere. We conclude with actionable multilateral governance proposals.
   ]
 ]
 
-#v(0.5cm)
+#v(0.3cm)
 
 = 1. Introduction: The Enclosure of the Orbital Commons
 
@@ -78,9 +74,7 @@ Outer space international law is grounded in an explicitly egalitarian doctrine.
 
 However, international law has struggled to reconcile formal legal non-appropriation with de facto physical enclosure. As political theorists of the commons have observed (from Garrett Hardin to Elinor Ostrom), when a shared physical resource has open access without binding allocation rules, early industrial actors can preemptively capture prime real estate under the guise of "use." 
 
-In near-Earth space, Low Earth Orbit (LEO, 200–2,000 km altitude) is not an infinite void. It is a scarce, finite physical and electromagnetic domain characterized by distinct physical shells, narrow altitude bands, and radio frequency bottlenecks. 
-
-By propagating 30 days of empirical satellite trajectory data from CelesTrak, this paper establishes that LEO has transitioned from an open commons into an enclosed oligopoly dominated by a single commercial actor and a handful of great powers.
+In near-Earth space, Low Earth Orbit (LEO, 200–2,000 km altitude) is not an infinite void. It is a scarce, finite physical and electromagnetic domain characterized by distinct physical shells, narrow altitude bands, and radio frequency bottlenecks. By propagating 30 days of empirical satellite trajectory data from CelesTrak, this paper establishes that LEO has transitioned from an open commons into an enclosed oligopoly dominated by a single commercial actor and a handful of great powers.
 
 = 2. Theoretical Framing: From Classical Geopolitics to Astropolitik
 
@@ -119,7 +113,7 @@ $ theta_0 = arctan((z a) / (p b)), quad phi = arctan((z + e'^2 b sin^3 theta_0) 
 
 where $a = 6378.137 "km"$, $f = 1/298.257223563$, and $p = sqrt(x^2 + y^2)$.
 
-= 4. Empirical Results & Astropolitical Inequities
+= 4. Empirical Results & Novel Astropolitical Findings
 
 == 4.1 LEO Monopolization & Spatial Concentration
 To assess concentration, we compute the Herfindahl-Hirschman Index (HHI) for active payloads in LEO (200–2,000 km altitude):
@@ -133,7 +127,7 @@ where $s_i$ is the percentage asset share of entity $i$. In antitrust economics,
   columns: (3.2cm, 2.5cm, 2.8cm, 2.2cm, 2.5cm),
   fill: (col, row) => if row == 0 { rgb("#1e293b") } else if calc.even(row) { rgb("#f8fafc") } else { none },
   stroke: 0.5pt + rgb("#cbd5e1"),
-  inset: 7pt,
+  inset: 6pt,
   align: (center + horizon),
   table.header(
     [*Orbital Regime*], [*Active Objects*], [*Leading Entity*], [*Share (%)*], [*HHI Score*]
@@ -143,16 +137,34 @@ where $s_i$ is the percentage asset share of entity $i$. In antitrust economics,
 )
 ]
 
-As summarized above, Low Earth Orbit exhibits an HHI of *7,789.3*—an extraordinary degree of private concentration with no parallel in terrestrial critical infrastructure. SpaceX alone operates *88.1%* of active operational LEO satellites. All sovereign nations of the Global South combined hold fewer than *0.2%* of active LEO assets.
-
-Furthermore, across 25 km altitude shells in LEO, the spatial Gini coefficient is *0.930*. Satellites are overwhelmingly compressed into the 540–560 km altitude band, creating severe physical congestion and precluding prospective space programs from entering optimal shells without incurring high collision-avoidance maneuver burdens.
+As summarized above, Low Earth Orbit exhibits an HHI of *7,789.3*—an extraordinary degree of private concentration with no parallel in terrestrial critical infrastructure. SpaceX alone operates *88.1%* of active operational LEO satellites. All sovereign nations of the Global South combined hold fewer than *0.2%* of active LEO assets. Across 25 km altitude shells in LEO, the spatial Gini coefficient is *0.930*.
 
 #align(center)[
-  #image("../output/figures/orbital_inequality_lorenz.png", width: 70%)
-  #text(size: 8.5pt, fill: rgb("#64748b"))[*Figure 1*: Lorenz Curve of LEO Asset Ownership demonstrating extreme structural inequality ($"Gini" = 0.930$).]
+  #image("../output/figures/orbital_inequality_lorenz.png", width: 65%)
+  #text(size: 8pt, fill: rgb("#64748b"))[*Figure 1*: Lorenz Curve of LEO Asset Ownership demonstrating extreme structural inequality ($"Gini" = 0.930$).]
 ]
 
-== 4.2 Latitudinal Dwell Skew & Analytical Orbit Mechanics
+== 4.2 The 2019 "Enclosure Inflection Point" (1957–2026)
+Historical analysis reveals that the current state of orbital enclosure is not a gradual historical continuation, but an abrupt structural discontinuity. Mapping cumulative satellite launches from 1957 to 2026 demonstrates that over 85% of all active satellites currently in orbit were deployed after 2019. In less than seven years, private commercial deployment has outstripped the prior six decades of cumulative sovereign space activity.
+
+#align(center)[
+  #image("../output/figures/temporal_enclosure_velocity.png", width: 78%)
+  #text(size: 8pt, fill: rgb("#64748b"))[*Figure 2*: Historical velocity of enclosure: cumulative active satellites by geopolitical bloc (1957–2026), highlighting the 2019 commercial hockey-stick inflection point.]
+]
+
+== 4.3 Volumetric Spatial Density: The 550 km Congestion Wall
+By dividing the number of satellites in each 25 km altitude shell by the physical spherical shell volume:
+$ V(r_1, r_2) = 4 / 3 pi (r_2^3 - r_1^3) $
+we calculate the physical spatial density in satellites per million cubic kilometers ($N / 10^6 "km"^3$). 
+
+While average LEO density sits below 0.05 objects per million km³, the 540–560 km shell reaches a peak density of *0.42 objects per million km³*—over an order of magnitude higher than any other orbital regime. Over 92% of the satellites in this shell belong to SpaceX. This "550 km Wall" creates an unpriced barrier to entry: any new satellite launching through this altitude must perform continuous collision avoidance maneuvers.
+
+#align(center)[
+  #image("../output/figures/volumetric_orbital_density.png", width: 75%)
+  #text(size: 8pt, fill: rgb("#64748b"))[*Figure 3*: Physical spatial density across Low Earth Orbit shells, identifying the extreme congestion peak at 550 km.]
+]
+
+== 4.4 Latitudinal Dwell Skew & Analytical Orbit Mechanics
 A circular orbit with inclination $i$ exhibits a ground-track latitude dwell probability distribution given analytically by:
 
 $ (d t) / (d phi) = 1 / (pi sqrt(sin^2(i) - sin^2(phi))) $
@@ -160,71 +172,60 @@ $ (d t) / (d phi) = 1 / (pi sqrt(sin^2(i) - sin^2(phi))) $
 As latitude $phi$ approaches the orbital turning inclination ($phi -> +- i$), the denominator approaches zero, producing pronounced dwell peaks. For SpaceX's dominant Starlink shell ($i approx 53 degree$), ground-track presence is concentrated between 45°N and 53°N.
 
 #align(center)[
-  #image("../output/figures/latitudinal_dwell_profile.png", width: 80%)
-  #text(size: 8.5pt, fill: rgb("#64748b"))[*Figure 2*: Empirical ground-track dwell probability density vs. geographic latitude, confirming the $plus.minus 53 degree$ inclination peaks.]
+  #image("../output/figures/latitudinal_dwell_profile.png", width: 75%)
+  #text(size: 8pt, fill: rgb("#64748b"))[*Figure 4*: Empirical ground-track dwell probability density vs. geographic latitude, confirming the $plus.minus 53 degree$ inclination peaks.]
 ]
 
-This analytical distribution produces a profound astropolitical outcome: while mega-constellations are marketed as benevolent humanitarian networks designed to "connect the unconnected" in rural Global South regions, orbital inclination choices optimize physical dwell and bandwidth delivery over the affluent mid-latitudes of North America, Western Europe, and East Asia. Equatorial and African nations receive diminished ground presence, requiring higher constellation densities or costly ground relay infrastructure.
+This analytical distribution produces a profound astropolitical outcome: while mega-constellations are marketed as benevolent humanitarian networks designed to "connect the unconnected" in rural Global South regions, orbital inclination choices optimize physical dwell and bandwidth delivery over the affluent mid-latitudes of North America, Western Europe, and East Asia.
 
-== 4.3 Universal Regional Coverage & Dwell Analysis
-Evaluating ground-track passes across all 10 world regions over the 30-day epoch reveals the empirical distribution of satellite presence:
+== 4.5 Full-World Satellite Activity Heatmap
+Evaluating satellite passes across the entire globe over the 30-day epoch reveals the empirical distribution of satellite presence:
 
 #align(center)[
-#table(
-  columns: (3.8cm, 2.5cm, 2.2cm, 2.8cm, 2.5cm),
-  fill: (col, row) => if row == 0 { rgb("#1e293b") } else if calc.even(row) { rgb("#f8fafc") } else { none },
-  stroke: 0.5pt + rgb("#cbd5e1"),
-  inset: 6pt,
-  align: (center + horizon),
-  table.header(
-    [*Region*], [*Category*], [*Area (M km²)*], [*30-Day Dwell (Hrs)*], [*Dwell Density*]
-  ),
-  [Oceania & Pacific], [Allied / South], [8.5], [195,849], [23,041 hrs/M km²],
-  [Latin America], [Global South], [20.1], [408,394], [20,318 hrs/M km²],
-  [Polar Regimes], [Commons], [28.0], [313,716], [11,204 hrs/M km²],
-  [East Asia], [Asia-Pacific], [11.8], [125,729], [10,655 hrs/M km²],
-  [Western Europe], [Global North], [5.4], [55,773], [10,328 hrs/M km²],
-  [South Asia], [Global South], [5.1], [52,065], [10,209 hrs/M km²],
-  [Sub-Saharan Africa], [Global South], [24.3], [243,437], [10,018 hrs/M km²],
-  [MENA], [Global South], [11.1], [107,672], [9,700 hrs/M km²],
-  [North America], [Global North], [24.7], [212,692], [8,611 hrs/M km²],
-  [Eastern Europe / RUS], [Eurasia], [18.0], [132,363], [7,354 hrs/M km²],
-)
+  #image("../output/figures/world_satellite_activity_heatmap.png", width: 88%)
+  #text(size: 8pt, fill: rgb("#64748b"))[*Figure 5*: Enhanced Global Satellite Activity Heatmap: Empirical 30-Day Trajectory Density across the entire planet.]
 ]
+
+== 4.6 Empirical Test of the Bogotá Declaration: GEO Longitudinal Sovereignty
+We mapped the sub-satellite longitudes of all active geostationary payloads against terrestrial equatorial sectors directly beneath them. The empirical findings strongly support the 1976 Bogotá Declaration hypothesis:
+- In the *Africa & Europe Corridor* (-35° to +50° longitude), over *75%* of GEO satellites belong to European, US, and international consortia; African sovereign programs hold fewer than 4%.
+- In the *Americas Corridor* (-120° to -35° longitude), US commercial and defense satellites dominate the slots directly above Latin America.
+- Geostationary space has been effectively privatized by northern industrial first-movers.
 
 #align(center)[
-  #image("../output/figures/global_satellite_density_map.png", width: 85%)
-  #text(size: 8.5pt, fill: rgb("#64748b"))[*Figure 3*: Global 2D Equirectangular Heatmap of 30-Day Satellite Ground Track Passes (CelesTrak SGP4 simulation).]
+  #image("../output/figures/geo_longitudinal_sovereignty.png", width: 75%)
+  #text(size: 8pt, fill: rgb("#64748b"))[*Figure 6*: Empirical Bogotá Test: Geostationary slot ownership across terrestrial longitudinal sectors.]
 ]
 
-== 4.4 Earth Observation & The Surveillance Panopticon
-Filtering for Earth Observation (EO), Remote Sensing, and Reconnaissance satellites (529 active payloads) reveals an acute transparency divide:
-- *Sovereign Ownership*: Over *85%* of high-resolution optical and Synthetic Aperture Radar (SAR) platforms belong to US commercial entities (Planet, Maxar, BlackSky), European programs (Sentinel, CNES, DLR), and China (Gaofen, Yaogan).
-- *Revisit Disparity*: Revisit intervals over European and North American military and agricultural corridors average under *0.3 to 0.4 hours* per million square kilometers, while Sub-Saharan Africa exhibits the lowest revisit density (*0.7 hours / M km²*).
-- *Asymmetric Transparency*: Developing nations are subject to continuous spaceborne scrutiny by foreign commercial and military intelligence satellites without sovereign reciprocal visibility. In environmental emergencies or border skirmishes, developing nations remain dependent on commercial imagery providers subject to foreign sovereign licensing and tasking vetoes.
+== 4.7 The Climate-Surveillance Paradox
+Contrasting regional Earth observation revisit frequency against ND-GAIN Climate Vulnerability Scores reveals an acute paradox: the world regions most exposed to sea-level rise, desertification, and agricultural collapse (Sub-Saharan Africa, South Asia, Latin America) have the lowest sovereign spaceborne observation capabilities. Sub-Saharan Africa exhibits the lowest revisit density (*0.7 hours / M km²*), leaving vulnerable populations dependent on foreign commercial feeds.
 
-== 4.5 Environmental Injustice & Orbital Debris Liability
-We define the Debris Liability Ratio as:
+#align(center)[
+  #image("../output/figures/climate_vulnerability_paradox.png", width: 75%)
+  #text(size: 8pt, fill: rgb("#64748b"))[*Figure 7*: The Climate-Surveillance Paradox: Regional Climate Vulnerability vs. Earth Observation Pass Density.]
+]
 
-$ R_"liability" = N_"debris" / N_"active_payloads" $
+== 4.8 Atmospheric Externalities: Megaconstellation Deorbit Deposition
+With a 5-year replacement cycle, mega-constellations deorbit thousands of satellites annually. When satellites burn up in the mesosphere (60–80 km), they vaporize metric tons of aerospace aluminum alloys into aluminum oxide (alumina) nanoparticles. Our model estimates that SpaceX Starlink alone deposits over *980 metric tons* of vaporized metal into the upper atmosphere annually, with total commercial deposition exceeding *1,022 metric tons/year*. Alumina nanoparticles catalyze ozone depletion and alter stratospheric radiative balance, representing an unpriced global environmental externality.
 
-Historical debris clouds generated by legacy space powers (notably the 2007 Chinese Fengyun-1C ASAT test, the 2009 Iridium-Cosmos collision, and the 2021 Russian Cosmos-1408 ASAT test) account for over 90% of tracked cataloged debris fragments. Emerging space agencies launching single scientific or educational payloads into LEO must absorb heightened collision risks and station-keeping costs despite having contributed virtually nothing to the debris field.
+#align(center)[
+  #image("../output/figures/atmospheric_deorbit_mass.png", width: 75%)
+  #text(size: 8pt, fill: rgb("#64748b"))[*Figure 8*: Annual aerosolized metal mass and aluminum oxide (alumina) deposited in the upper atmosphere by satellite operator.]
+]
 
 = 5. Policy Implications & Governance Reform
 
-The structural inequality documented in this paper requires foundational reforms in international space governance:
-
 1. *Reform of the ITU "First-Come, First-Served" Regime*: Transition toward an equitable quota allocation system that reserves dedicated orbital shells and radio frequencies for developing countries and regional space organizations (e.g., the African Space Agency, ALCE).
 2. *Orbital Carrying-Capacity Limits & Conservation Fees*: Establish multilateral orbital density thresholds within UN COPUOS. Impose an *Orbital Commons Conservation Fee* on constellations exceeding 100 satellites, redirecting revenues toward Active Debris Removal (ADR) and open Space Situational Awareness (SSA) services for emerging space nations.
-3. *Multilateral Earth Observation Trusts*: Expand UN-SPIDER into an open, sovereign Earth observation data trust, guaranteeing zero-cost, high-resolution imagery access to developing nations for climate disaster mitigation and natural resource management.
-4. *Mandatory Post-Mission Disposal (PMD) Bonds*: Lower international deorbit requirements from the legacy 25-year guideline to a strict *1-to-5-year maximum orbital lifetime*, backed by financial decommissioning escrow bonds deposited prior to launch.
+3. *Montreal Protocol Space Amendments*: Recognize mesospheric alumina injection from constellation deorbiting as a regulated environmental pollutant under international atmospheric treaties.
+4. *Multilateral Earth Observation Trusts*: Expand UN-SPIDER into an open, sovereign Earth observation data trust, guaranteeing zero-cost, high-resolution imagery access to developing nations for climate disaster mitigation.
 
 = 6. Conclusion
 
 Outer space cannot remain an unregulated frontier where early industrial entrants capture the global commons under the guise of commercial efficiency. Without binding multilateral governance that aligns physical deployments with the egalitarian tenets of the 1967 Outer Space Treaty, Low Earth Orbit will solidify into a private, stratified tollway that entrenches terrestrial inequality for generations to come.
 
-#v(0.5cm)
+#v(0.3cm)
 #line(length: 100%, stroke: 0.5pt + rgb("#cbd5e1"))
-#text(size: 8.5pt, fill: rgb("#64748b"))[
+#text(size: 8pt, fill: rgb("#64748b"))[
   *Data Availability*: All SGP4 trajectory code, CelesTrak cache files, and interactive Jupyter notebooks are archived in `/home/moose/git/astro`. Run `uv run pytest` and `uv run astro-pipeline` to reproduce all figures and metrics.
 ]
