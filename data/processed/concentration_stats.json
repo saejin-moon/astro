@@ -1,0 +1,33 @@
+{
+  "leo_satellite_count": 12720,
+  "geo_satellite_count": 569,
+  "leo_shell_gini": 0.9300292627533193,
+  "leo_bloc_hhi": 7789.2536638186775,
+  "geo_bloc_hhi": 2585.2712340275693,
+  "leo_bloc_shares": {
+    "US Commercial (SpaceX)": 88.06603773584905,
+    "Europe / UK Commercial (OneWeb)": 5.117924528301887,
+    "China Commercial (Qianfan)": 2.0125786163522013,
+    "US Commercial (Planet Labs)": 0.9984276729559748,
+    "Other / International": 0.9276729559748428,
+    "United States (Civil / Defense)": 0.8333333333333334,
+    "China (PRC)": 0.5660377358490566,
+    "US Commercial (Spire)": 0.550314465408805,
+    "Europe (ESA / EU)": 0.3144654088050315,
+    "Japan (JAXA)": 0.25157232704402516,
+    "India (ISRO)": 0.15723270440251574,
+    "Russia": 0.11006289308176101,
+    "Global South": 0.09433962264150944
+  },
+  "geo_bloc_shares": {
+    "Other / International": 42.00351493848858,
+    "United States (Civil / Defense)": 20.035149384885763,
+    "China (PRC)": 18.27768014059754,
+    "Russia": 5.448154657293498,
+    "India (ISRO)": 5.448154657293498,
+    "Japan (JAXA)": 4.21792618629174,
+    "Global South": 2.460456942003515,
+    "US Allied Partners": 1.2302284710017575,
+    "Europe (ESA / EU)": 0.8787346221441126
+  }
+}
