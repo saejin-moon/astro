@@ -3,6 +3,7 @@ name = "astropolitics"
 version = "0.1.0"
 description = "Astropolitical inequity research toolkit using CelesTrak satellite data and 30-day SGP4 propagation"
 readme = "README.md"
+license = "MIT"
 requires-python = ">=3.10"
 dependencies = [
     "sgp4>=2.23",
